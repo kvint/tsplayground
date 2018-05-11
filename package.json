@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "webpack": "^4.8.2"
+  }
+}
