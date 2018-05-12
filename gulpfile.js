@@ -1,9 +1,10 @@
 let gulp = require("gulp");
-let webpack = require("gulp-webpack");
+let webpack = require("webpack");
+let webpackStram = require("webpack-stream");
 let wconfig = require("./webpack.config.js")
 
 gulp.task("default", () => 
-	gulp.src("src/index.ts")
-		.pipe(webpack(wconfig))
-		.pipe(gulp.dest("bin/"))
+	gulp.src("src/**/*")
+		.pipe(webpackStram(wconfig, webpack))
+		.pipe(gulp.dest("./bin/"))
 )

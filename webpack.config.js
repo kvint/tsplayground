@@ -6,8 +6,11 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/
+        loader: 'awesome-typescript-loader',
+        exclude: /node_modules/,
+        query: {
+          useCache: true
+        }
       }
     ]
   },
@@ -16,6 +19,7 @@ module.exports = {
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
-  }
+    path: path.resolve(__dirname, 'bin')
+  },
+  mode: "development"
 };
